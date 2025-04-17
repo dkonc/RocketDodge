@@ -12,10 +12,16 @@ extends RigidBody3D
 @onready var left_booster_particles: GPUParticles3D = $LeftBoosterParticles
 @onready var explosion_particles: GPUParticles3D = $ExplosionParticles
 @onready var success_particles: GPUParticles3D = $SuccessParticles
+@onready var timer: Label3D = $"../Camera3D/Timer"
 
 var is_transitioning: bool = false
 
 func _process(delta: float) -> void:
+	if get_tree().current_scene.name != "MainMenu":
+		GameManager.time_taken += delta
+		timer.text = "%.1f" % snappedf(GameManager.time_taken, 0.1)
+
+	print(GameManager.time_taken)
 	if Input.is_action_pressed("boost"):
 		apply_central_force(basis.y * delta * thrust)
 		booster_particles.emitting = true

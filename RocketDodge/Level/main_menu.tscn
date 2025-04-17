@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5fcau7vdb03x"]
+
+[ext_resource type="PackedScene" uid="uid://b8smjy8dacru7" path="res://Parts/Background.tscn" id="1_23wqo"]
+[ext_resource type="Script" path="res://Level/landing_pad.gd" id="2_qc8pd"]
+[ext_resource type="PackedScene" uid="uid://bby8mv4r0i3e" path="res://Parts/player.tscn" id="3_06ek3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw7ws"]
+albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssmjw"]
+albedo_color = Color(0.0862745, 0.729412, 0.239216, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_cxbau"]
+text = "START
+GAME"
+font_size = 127
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8tfb"]
+albedo_color = Color(0.0357569, 0.391486, 0.115608, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_j702p"]
+text = "W: BOOST
+A / D: ROTATE
+
+HIT THE LANDING PAD
+ TO PROGRESS"
+font_size = 127
+depth = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_keb2e"]
+albedo_color = Color(0.416726, 0.904977, 0.288152, 1)
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_23wqo")]
+
+[node name="LaunchPad" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)
+use_collision = true
+size = Vector3(2, 0.4, 2)
+material = SubResource("StandardMaterial3D_lw7ws")
+
+[node name="LandingPad" type="CSGBox3D" parent="." groups=["Goal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.2, 0)
+use_collision = true
+size = Vector3(4, 0.4, 4)
+material = SubResource("StandardMaterial3D_ssmjw")
+script = ExtResource("2_qc8pd")
+file_path = "res://Level/level_1.tscn"
+
+[node name="Start_Game_Text" type="MeshInstance3D" parent="LandingPad"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0193825, 0.237388, -0.184058)
+mesh = SubResource("TextMesh_cxbau")
+surface_material_override/0 = SubResource("StandardMaterial3D_n8tfb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 7, 9)
+top_level = true
+
+[node name="Player" parent="." instance=ExtResource("3_06ek3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.4, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24303, 10.7247, -5.30421)
+omni_range = 190.715
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6038, 10.7247, -5.30421)
+light_energy = 0.5
+omni_range = 190.715
+
+[node name="Instructions" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13082, 6.72213, -4.34455)
+mesh = SubResource("TextMesh_j702p")
+surface_material_override/0 = SubResource("StandardMaterial3D_keb2e")

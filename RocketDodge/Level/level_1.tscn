@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://byj7q56j5mq45"]
+[gd_scene load_steps=7 format=3 uid="uid://b151xmsjvowhr"]
 
-[ext_resource type="Script" path="res://Level/landing_pad.gd" id="1_kky5l"]
-[ext_resource type="PackedScene" uid="uid://bby8mv4r0i3e" path="res://Parts/player.tscn" id="2_r6afa"]
-[ext_resource type="PackedScene" uid="uid://b8smjy8dacru7" path="res://Parts/Background.tscn" id="3_eq8mf"]
-[ext_resource type="PackedScene" uid="uid://b1yxbfo1xfh4v" path="res://Parts/moving_obstacle.tscn" id="3_fm35j"]
+[ext_resource type="Script" path="res://Level/landing_pad.gd" id="1_su3ms"]
+[ext_resource type="PackedScene" uid="uid://bby8mv4r0i3e" path="res://Parts/player.tscn" id="2_aa7na"]
+[ext_resource type="PackedScene" uid="uid://b8smjy8dacru7" path="res://Parts/Background.tscn" id="3_sdktd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1qkb"]
+albedo_color = Color(0.760002, 0.251636, 0.889612, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw7ws"]
 albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
@@ -12,6 +14,12 @@ albedo_color = Color(0.337255, 0.662745, 0.788235, 1)
 albedo_color = Color(0.0862745, 0.729412, 0.239216, 1)
 
 [node name="Level" type="Node3D"]
+
+[node name="Obstacle" type="CSGBox3D" parent="." groups=["Hazard"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08288, 0)
+use_collision = true
+size = Vector3(3, 2, 3)
+material = SubResource("StandardMaterial3D_u1qkb")
 
 [node name="LaunchPad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)
@@ -24,21 +32,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.2, 0)
 use_collision = true
 size = Vector3(2, 0.4, 2)
 material = SubResource("StandardMaterial3D_ssmjw")
-script = ExtResource("1_kky5l")
-file_path = "res://Level/level.tscn"
+script = ExtResource("1_su3ms")
+file_path = "res://Level/level_2.tscn"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 7, 9)
 top_level = true
 
-[node name="Player" parent="." instance=ExtResource("2_r6afa")]
+[node name="Timer" type="Label3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.978148, -0.207912, 0, 0.207912, 0.978148, -8.21823, 5.23503, -8.39324)
+modulate = Color(0.779291, 0.779291, 0.779291, 1)
+font_size = 256
+
+[node name="Player" parent="." instance=ExtResource("2_aa7na")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.4, 0)
 
-[node name="MovingObstacle" parent="." instance=ExtResource("3_fm35j")]
-destination = Vector3(0, 2, 0)
-duration = 3.0
-
-[node name="Floor" parent="." instance=ExtResource("3_eq8mf")]
+[node name="Floor" parent="." instance=ExtResource("3_sdktd")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.24303, 10.7247, -5.30421)

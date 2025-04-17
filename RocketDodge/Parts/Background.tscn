@@ -1,0 +1,3361 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8smjy8dacru7"]
+
+[ext_resource type="Material" uid="uid://kmihqap22tsk" path="res://Parts/Rocks.tres" id="1_pi5np"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_151vl"]
+albedo_color = Color(0.4, 0.270588, 0.176471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4e8bb"]
+size = Vector3(8, 4, 5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nqv6r"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_m1paq"]
+sky_material = SubResource("ProceduralSkyMaterial_nqv6r")
+
+[sub_resource type="Environment" id="Environment_v2uhj"]
+background_mode = 1
+background_color = Color(0.265913, 0.276506, 0.276716, 1)
+sky = SubResource("Sky_m1paq")
+ambient_light_source = 3
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Floor" type="CSGBox3D" groups=["Hazard"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+use_collision = true
+size = Vector3(30, 8, 5)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(0.981624, -0.190826, 0, 0.190826, 0.981624, 0, 0, 0, 1, -12.6695, 6.20214, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.858674, 0.512523, 0, -0.512523, 0.858674, 0, 0, 0, 1, -12.0991, 14.4714, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.988497, 0.151244, 0, -0.151244, 0.988497, 0, 0, 0, 1, 15.0825, 14.4714, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.914537, 0.404503, 0, -0.404503, 0.914537, 0, 0, 0, 1, 15.0825, 6.28163, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Ceilling" type="CSGBox3D" parent="."]
+transform = Transform3D(0.240143, 0.970738, 0, -0.970738, 0.240143, 0, 0, 0, 1, -5.74935, 18.1579, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Ceilling2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0081681, 0.999967, 0, -0.999967, -0.0081681, 0, 0, 0, 1, 3.02669, 19.0275, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Ceilling3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.133415, 0.99106, 0, -0.99106, 0.133415, 0, 0, 0, 1, 10.6055, 19.6903, 0)
+size = Vector3(4, 10, 4)
+material = SubResource("StandardMaterial3D_151vl")
+
+[node name="Rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.808822, -0.588053, 0, 0.466222, 0.641252, 0.609453, -0.358391, -0.492939, 0.792822, -8.25734, 0.643335, 5.81359)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.599665, 0.277419, -0.750627, 0.466222, 0.641252, 0.609453, 0.650414, -0.715426, 0.255198, -21.0332, 0.643335, -15.1089)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock10" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -5.0108, -2.70613, 5.18445)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock10"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock11" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, -3.26516, 9.11244, -7.09009)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock11"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock12" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -8.27596, 6.40631, -1.90563)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock12"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock13" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 8.79191, 6.22692, -13.2775)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock13"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock14" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 3.78111, 3.52079, -8.09302)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock14"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock15" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 5.52675, 15.3394, -20.3676)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock15"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock16" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 0.515947, 12.6332, -15.1831)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock16"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock17" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 16.4896, 9.78803, -22.913)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock17"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock18" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 11.4788, 7.0819, -17.7285)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock18"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock19" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 13.2244, 18.9005, -30.0031)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock19"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock20" type="MeshInstance3D" parent="Rock2"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 8.21361, 16.1943, -24.8186)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock2/Rock20"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.599665, 0.277419, -0.750627, -0.587848, 0.789152, -0.177967, 0.542987, 0.547976, 0.636307, -21.0332, 17.2966, -10.9889)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock10" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -5.0108, -2.70613, 5.18445)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock10"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock11" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, -3.26516, 9.11244, -7.09009)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock11"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock12" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -8.27596, 6.40631, -1.90563)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock12"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock13" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 8.79191, 6.22692, -13.2775)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock13"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock14" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 3.78111, 3.52079, -8.09302)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock14"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock15" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 5.52675, 15.3394, -20.3676)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock15"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock16" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 0.515947, 12.6332, -15.1831)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock16"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock17" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 16.4896, 9.78803, -22.913)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock17"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock18" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 11.4788, 7.0819, -17.7285)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock18"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock19" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 13.2244, 18.9005, -30.0031)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock19"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock20" type="MeshInstance3D" parent="Rock3"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 8.21361, 16.1943, -24.8186)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock3/Rock20"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.599665, 0.277419, -0.750627, -0.173373, -0.870674, -0.460291, -0.781244, 0.406159, -0.474016, -21.0332, 26.7789, -5.08537)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock10" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -5.0108, -2.70613, 5.18445)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock10"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock11" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, -3.26516, 9.11244, -7.09009)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock11"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock12" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -8.27596, 6.40631, -1.90563)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock12"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock13" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 8.79191, 6.22692, -13.2775)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock13"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock14" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 3.78111, 3.52079, -8.09302)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock14"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock15" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 5.52675, 15.3394, -20.3676)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock15"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock16" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 0.515947, 12.6332, -15.1831)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock16"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock17" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 16.4896, 9.78803, -22.913)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock17"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock18" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 11.4788, 7.0819, -17.7285)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock18"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock19" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 13.2244, 18.9005, -30.0031)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock19"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock20" type="MeshInstance3D" parent="Rock4"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 8.21361, 16.1943, -24.8186)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock4/Rock20"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.315441, 0.912151, 0.261682, 0.538659, 0.0549135, -0.840732, -0.781244, 0.406159, -0.474016, -23.972, -6.20522, -5.08537)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock10" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -5.0108, -2.70613, 5.18445)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock10"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock11" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, -3.26516, 9.11244, -7.09009)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock11"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock12" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -8.27596, 6.40631, -1.90563)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock12"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock13" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 8.79191, 6.22692, -13.2775)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock13"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock14" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 3.78111, 3.52079, -8.09302)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock14"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock15" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 5.52675, 15.3394, -20.3676)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock15"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock16" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 0.515947, 12.6332, -15.1831)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock16"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock17" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 16.4896, 9.78803, -22.913)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock17"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock18" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 11.4788, 7.0819, -17.7285)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock18"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock19" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 13.2244, 18.9005, -30.0031)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock19"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock20" type="MeshInstance3D" parent="Rock5"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 8.21361, 16.1943, -24.8186)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock5/Rock20"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.135143, -0.85141, -0.506791, -0.60942, -0.331868, 0.720049, -0.781244, 0.406159, -0.474016, 19.8596, 29.3964, -5.08537)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock10" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -5.0108, -2.70613, 5.18445)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock10"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock11" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, -3.26516, 9.11244, -7.09009)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock11"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock12" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, -8.27596, 6.40631, -1.90563)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock12"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock13" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 8.79191, 6.22692, -13.2775)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock13"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock14" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 3.78111, 3.52079, -8.09302)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock14"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock15" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 5.52675, 15.3394, -20.3676)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock15"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock16" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 0.515947, 12.6332, -15.1831)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock16"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock17" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 16.4896, 9.78803, -22.913)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock17"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock18" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 11.4788, 7.0819, -17.7285)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock18"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock19" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -4.47035e-08, 1.49012e-08, 2.98023e-08, 1, 13.2244, 18.9005, -30.0031)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock19"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock20" type="MeshInstance3D" parent="Rock6"]
+transform = Transform3D(0.996423, -0.0568354, 0.0625371, 0.0595681, 0.997309, -0.0427373, -0.0599398, 0.0463096, 0.997127, 8.21361, 16.1943, -24.8186)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../..")
+
+[node name="Rock2" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.120495, 0.0274591, 0.992334, 0.98808, 0.0931498, -0.122556, -0.0958011, 0.995273, -0.0159077, -1.73925, -3.00341, 0.554463)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock3" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.871634, -0.32577, 0.366235, 0.47302, 0.754898, -0.454291, -0.128476, 0.569212, 0.812091, 0.592448, -3.81296, -0.377455)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock4" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.169223, -0.0140658, 0.985477, 0.977946, 0.126589, -0.166123, -0.122414, 0.991855, 0.0351774, 4.04379, -4.84806, -1.92857)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock5" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.934502, -0.293421, 0.20152, 0.352467, 0.841856, -0.408712, -0.049726, 0.452971, 0.890137, 5.48639, -5.70413, -1.80871)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock6" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 9.53455, -7.84618, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock7" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.0426752, 0.0987877, 0.994193, 0.997997, 0.0423022, -0.0470416, -0.0467035, 0.994209, -0.0967845, 12.9451, -10.3258, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock8" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.935197, -0.292789, 0.199202, 0.350792, 0.842957, -0.407883, -0.0484946, 0.451329, 0.891039, 14.1237, -11.1827, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="Rock9" type="MeshInstance3D" parent="Rock6/Rock20"]
+transform = Transform3D(0.531376, -0.253173, 0.80842, 0.815676, 0.410559, -0.407571, -0.228718, 0.875982, 0.424669, 17.6348, -13.7355, -2.65168)
+material_override = ExtResource("1_pi5np")
+mesh = SubResource("BoxMesh_4e8bb")
+skeleton = NodePath("../../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_v2uhj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.984808, -0.0593912, 0.163176, 0, 0.939693, 0.34202, -0.173648, -0.336824, 0.925417, 0, 4, 0)
+light_energy = 0.3
+shadow_enabled = true
